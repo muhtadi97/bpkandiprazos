@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Bapak Andi Prazos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* [Style sebelumnya tetap sama] */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .page {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .gift-button {
+            background: #1a2a6c;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .gift-button:hover {
+            transform: scale(1.05);
+            background: #2a3a7c;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            color: #1a2a6c;
+            margin-bottom: 1.5rem;
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .photo-frame {
+            width: 250px;
+            height: 250px;
+            margin: 2rem auto;
+            border-radius: 50%;
+            border: 8px solid #1a2a6c;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cake-container {
+            width: 300px;
+            height: 300px;
+            margin: 2rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cake-gif {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .wishes {
+            padding: 2rem;
+            margin: 1rem 0;
+            background: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .wishes p {
+            font-style: italic;
+        }
+
+        .wishes p:last-child {
+            font-style: normal;
+            font-weight: 600;
+            color: #1a2a6c;
+        }
+
+        .audio-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .audio-control:hover {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .footer:hover {
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        /* Memastikan footer tidak tumpang tindih dengan konten */
+        .container {
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Halaman 1 -->
+        <div class="page active" id="page1">
+            <h1>Selamat Ulang Tahun</h1>
+            <div class="photo-frame">
+                <img src="Andi-Prazos2.png" alt="Bapak Andi Prazos">
+            </div>
+            <p class="subtitle">Bapak Andi Prazos</p>
+            <p style="font-family: 'Great Vibes', cursive; font-size: 1.8rem;">Direktur Operasional PT Indofarma Tbk</p>
+            <button class="gift-button" onclick="showPage(2)">✨ Buka Hadiah ✨</button>
+        </div>
+
+        <!-- Halaman 2 -->
+        <div class="page" id="page2">
+            <h1>Harapan & Doa</h1>
+            <div class="wishes">
+                <p>"Di hari yang penuh berkah ini, kami mendoakan agar Allah SWT senantiasa memberikan keberkahan,
+                    kesehatan, dan kebijaksanaan dalam setiap langkah Bapak memimpin Indofarma menuju puncak
+                    kesuksesan."</p>
+                <p> </p>
+            </div>
+            <div class="wishes">
+                <p>"Semoga di usia yang bertambah ini menjadi tambahan kebaikan dan keberkahan. Teruslah menjadi
+                    pemimpin yang menginspirasi kami semua dengan dedikasi dan integritasnya."</p>
+                <p> </p>
+            </div>
+            <button class="gift-button" onclick="showPage(3)">✨ Lanjutkan ✨</button>
+        </div>
+
+        <!-- Halaman 3 -->
+        <div class="page" id="page3">
+            <h1>Sukses Selalu!</h1>
+            <div class="cake-container">
+                <img class="cake-gif" src="kue.gif" alt="Animated Birthday Cake">
+            </div>
+            <p style="font-family: 'Great Vibes', cursive; font-size: 2rem;">Semoga semua harapan dan cita-cita Bapak
+                dapat terwujud</p>
+            <button class="gift-button" onclick="showPage(1)">🙏</button>
+        </div>
+    </div>
+
+    <!-- Audio Control -->
+    <div class="audio-control" onclick="toggleMusic()">
+        🎵
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="Ten2Five - Happy Birthday (Official Lyric).mp4" type="audio/mp4">
+    </audio>
+
+    <div class="footer">by muhtadiarii</div>
+
+    <script>
+        function showPage(pageNumber) {
+            // Sembunyikan semua halaman
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Tampilkan halaman yang dipilih
+            document.getElementById('page' + pageNumber).classList.add('active');
+        }
+
+        let isPlaying = false;
+        const audio = document.getElementById('bgMusic');
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                document.querySelector('.audio-control').innerHTML = '🔇';
+            } else {
+                audio.play();
+                document.querySelector('.audio-control').innerHTML = '🎵';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Mulai musik saat halaman dimuat
+        window.onload = function () {
+            // Mencoba memulai musik (beberapa browser mungkin memblokir autoplay)
+            audio.play().catch(function (error) {
+                console.log("Autoplay prevented");
+            });
+        }
+    </script>
+</body>
+
+</html>
